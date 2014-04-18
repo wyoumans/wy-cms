@@ -29,7 +29,6 @@ var environment = require('../environment');
 module.exports = {
   appName: "William Youmans CMS",
 
-
   // The `port` setting determines which TCP port your app will be deployed on
   // Ports are a transport-layer concept designed to allow many different
   // networking applications run at the same time on a single computer.
@@ -39,8 +38,6 @@ module.exports = {
   // to 80 (http://) or 443 (https://) if you have an SSL certificate
 
   port: environment.port,
-
-
 
   // The runtime "environment" of your Sails app is either 'development' or 'production'.
   //
@@ -55,5 +52,4 @@ module.exports = {
   // If NODE_ENV is not set, Sails will run in the 'development' environment.
 
   environment: environment.sailsEnv
-
 };
