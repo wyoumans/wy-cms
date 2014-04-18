@@ -2,7 +2,7 @@
  * Default 404 (Not Found) handler
  *
  * If no route matches are found for a request, Sails will respond using this handler.
- * 
+ *
  * This middleware can also be invoked manually from a controller or policy:
  * Usage: res.notFound()
  */
@@ -27,9 +27,11 @@ module.exports[404] = function pageNotFound(req, res) {
   }
 
   res.status(result.status);
-  res.render(viewFilePath, function (err) {
+  res.render(viewFilePath, function(err) {
     // If the view doesn't exist, or an error occured, send json
-    if (err) { return res.json(result, result.status); }
+    if (err) {
+      return res.json(result, result.status);
+    }
 
     // Otherwise, serve the `views/404.*` page
     res.render(viewFilePath);

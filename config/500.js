@@ -1,7 +1,7 @@
 /**
  * Default 500 (Server Error) middleware
  *
- * If an error is thrown in a policy or controller, 
+ * If an error is thrown in a policy or controller,
  * Sails will respond using this default error handler
  *
  * This middleware can also be invoked manually from a controller or policy:
@@ -21,24 +21,23 @@ module.exports[500] = function serverErrorOccurred(errors, req, res) {
    */
 
   var viewFilePath = '500',
-      statusCode = 500,
-      i, errorToLog, errorToJSON;
+    statusCode = 500,
+    i, errorToLog, errorToJSON;
 
   var result = {
     status: statusCode
   };
 
-  // Normalize a {String|Object|Error} or array of {String|Object|Error} 
+  // Normalize a {String|Object|Error} or array of {String|Object|Error}
   // into an array of proper, readable {Error}
   var errorsToDisplay = sails.util.normalizeErrors(errors);
   for (i in errorsToDisplay) {
 
     // Log error(s) as clean `stack`
     // (avoids ending up with \n, etc.)
-    if ( errorsToDisplay[i].original ) {
+    if (errorsToDisplay[i].original) {
       errorToLog = sails.util.inspect(errorsToDisplay[i].original);
-    }
-    else {
+    } else {
       errorToLog = errorsToDisplay[i].stack;
     }
     sails.log.error('Server Error (500)');
@@ -66,10 +65,12 @@ module.exports[500] = function serverErrorOccurred(errors, req, res) {
     res.locals[key] = result[key];
   }
   // And render view
-  res.render(viewFilePath, result, function (err) {
+  res.render(viewFilePath, result, function(err) {
     // If the view doesn't exist, or an error occured, just send JSON
-    if (err) { return res.json(result, result.status); }
-    
+    if (err) {
+      return res.json(result, result.status);
+    }
+
     // Otherwise, if it can be rendered, the `views/500.*` page is rendered
     res.render(viewFilePath, result);
   });
