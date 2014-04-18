@@ -1,0 +1,6 @@
+{
+  "port": 3333,
+  "mongoURI": "mongodb://localhost/williamyoumans",
+  "testing": false,
+  "sailsEnv": "development"
+}

@@ -1,0 +1,6 @@
+{
+  "port": 4321,
+  "mongoURI": "mongodb://localhost/williamyoumans_test",
+  "env": "testing",
+  "testing": true
+}
