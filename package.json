@@ -28,6 +28,7 @@
     "passport-local": "~1.0.0",
     "sails": "~0.9.8",
     "sails-mongo": "~0.9.7",
+    "waterline": "wyoumans/waterline",
     "winston": "~0.7.3"
   },
   "main": "app.js",
