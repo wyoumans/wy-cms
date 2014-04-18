@@ -34,8 +34,5 @@
   "main": "app.js",
   "author": "William Youmans",
   "license": "MIT",
-  "devDependencies": {
-    "grunt-mkdir": "~0.1.1",
-    "grunt-rename": "~0.1.3"
-  }
+  "devDependencies": {}
 }
