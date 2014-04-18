@@ -1,14 +1,13 @@
 'use strict';
 
-var winston      = require('winston')
-  , fs           = require('fs')
-  , config       = require('../config')
-  , logDirectory = __dirname + '/../../logs'
-  , logFile      = __dirname + '/../../logs/debug.log'
-  , transports   = []
-  ;
+var winston = require('winston'),
+    fs = require('fs'),
+    environment = require('../../environment'),
+    logDirectory = __dirname + '/../../logs',
+    logFile = __dirname + '/../../logs/debug.log',
+    transports = [];
 
-if (config.logToFile) {
+if (environment.logToFile) {
   // ensure directories and files exist for logging
   var logsExist = fs.existsSync(logDirectory);
 

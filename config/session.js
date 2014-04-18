@@ -1,5 +1,7 @@
 'use strict';
 
+var environment = require('../environment');
+
 /**
  * Session
  *
@@ -17,11 +19,11 @@ module.exports.session = {
   // Session secret is automatically generated when your new app is created
   // Replace at your own risk in production-- you will invalidate the cookies of your users,
   // forcing them to log in again.
-  secret: 'dfoDtYYo8XFnvGMRX4KjskdvHjunpF'
+  secret: 'dfoDtYYo8XFnvGMRX4KjskdvHjunpF',
 
   // Permastore of session data (so it is not lost when the app restarts)
   adapter: 'mongo',
-  url: adapters.mongo.url + '/sessions',
+  url: environment.mongoURI + '/sessions',
   stringify: true
 
 };
