@@ -11,7 +11,7 @@ exports['linker']['templates']['auth'] = {};
 exports['linker']['templates']['auth']['login'] = function anonymous(locals) {
   var buf = [];
   with (locals || {}) {
-    buf.push('<form action="/login" method="POST" accept-charset="UTF-8"><label for="username">Username</label><input id="username" type="text" name="username" required="required"/><label for="password">Password</label><input id="password" type="password" name="password" required="required"/><input type="submit" name="submit"/></form>');
+    buf.push('<form action="/login" method="POST" accept-charset="UTF-8"><label for="username">Username</label><input id="username" type="text" name="username" required="required"/><label for="password">Password</label><input id="password" type="password" name="password" required="required"/><input type="submit" name="submit" value="Login"/></form>');
   }
   return buf.join("");
 };

@@ -15,5 +15,16 @@
 
 
 module.exports.policies = {
-  '*': 'isAuthenticated'
+
+  // Default policy for all controllers and actions
+  // (`true` allows public access, `false` allows NO access)
+  '*': false,
+
+  UserController: {
+    '*': 'isAuthenticated'
+  },
+
+  AuthController: {
+    '*': true
+  }
 };

@@ -20,7 +20,7 @@ module.exports[403] = function badRequest(message, req, res) {
    * the same interface for receiving socket messages.
    */
 
-  var viewFilePath = '403';
+  var viewFilePath = 'error/403';
   var statusCode = 403;
 
   var result = {

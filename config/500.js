@@ -22,7 +22,7 @@ module.exports[500] = function serverErrorOccurred(errors, req, res) {
    * the same interface for receiving socket messages.
    */
 
-  var viewFilePath = '500',
+  var viewFilePath = 'error/500',
     statusCode = 500,
     i, errorToLog, errorToJSON;
 
