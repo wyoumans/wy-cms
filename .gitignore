@@ -38,8 +38,9 @@ npm-debug.log
 nbproject
 .idea
 
-
 ########################
-# local config
+# compiled assets
 ########################
-config/local.js
+assets/linker/styles/*.css
+*-compiled.js
+templates.js
