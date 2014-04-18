@@ -1,5 +1,12 @@
-# wy-cms
-### a Sails application
+# William Youmans CMS
+
+Angular Client
+
+Sails API
+
+Mongo Datasource
+
+Win
 
 ## License
 
