@@ -1,0 +1,39 @@
+doctype html
+| <!--[if lt IE 7]>   <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr">    <![endif]-->
+| <!--[if IE 7]>      <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en" dir="ltr">           <![endif]-->
+| <!--[if IE 8]>      <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en" dir="ltr">                  <![endif]-->
+| <!--[if IE 9]>      <html class="no-js ie ie9 lt-ie10" lang="en" dir="ltr">                         <![endif]-->
+| <!--[if gt IE 9]>
+|    <!-->            <html class="no-js" lang="en" dir="ltr">                                        <!--<![endif]-->
+head
+  title= title
+  meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+
+  //- Modernizr - in header on purpose - all other JS in footer
+  script(src= '/linker/js/vendor/modernizr-2.6.2.min.js')
+
+  //- STYLES
+  link(rel="stylesheet", href="/linker/styles/style.css")
+  //- STYLES END
+body
+  header
+    p Heck of a header
+
+  #main
+    block content
+
+  hr
+
+  footer
+    p &copy; Copyright 2014 William Youmans
+
+  //- Libraries from CDN with failovers
+  script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+  script if (typeof window.jQuery == 'undefined') { document.write(unescape("%3Cscript src='/fadmin/linker/js/vendor/jquery-1.9.0.min.js' type='text/javascript'%3E%3C/script%3E")); }
+
+  //- SCRIPTS
+  script(type="text/javascript", src="/linker/js/index-compiled.js")
+  //- SCRIPTS END
+
+  //if lt IE 9
+    script(src= '/fadmin/linker/js/vendor/selectivizr-1.0.2.min.js')
