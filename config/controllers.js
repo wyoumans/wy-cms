@@ -96,7 +96,7 @@ module.exports.controllers = {
      *
      * `shortcuts` are enabled by default, but SHOULD BE DISABLED IN PRODUCTION!!!!!
      */
-    shortcuts: true,
+    shortcuts: false,
 
 
 
@@ -117,7 +117,7 @@ module.exports.controllers = {
      *
      * By default, no prefix is used.
      */
-    prefix: '',
+    prefix: '/api/v1',
 
 
 

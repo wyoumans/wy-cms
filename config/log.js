@@ -11,19 +11,46 @@
  * http://sailsjs.org/#documentation
  */
 
+
+var winston       = require('winston'),
+    fs            = require('fs'),
+    logDir        = __dirname + '/../logs',
+    debugFile     = __dirname + '/../logs/debug.log',
+    exceptionFile = __dirname + '/../logs/exceptions.log',
+    logsExist     = fs.existsSync(logDir);
+
+if (!logsExist) {
+  fs.mkdirSync(logDir);
+  fs.writeFileSync(debugFile, "File Created at: " + new Date().toString() + "\n\n");
+  fs.writeFileSync(exceptionFile, "File Created at: " + new Date().toString() + "\n\n");
+}
+
 module.exports = {
-
-  // Valid `level` configs:
-  // i.e. the minimum log level to capture with sails.log.*()
-  //
-  // 'error'	: Display calls to `.error()`
-  // 'warn'	: Display calls from `.error()` to `.warn()`
-  // 'debug'	: Display calls from `.error()`, `.warn()` to `.debug()`
-  // 'info'	: Display calls from `.error()`, `.warn()`, `.debug()` to `.info()`
-  // 'verbose': Display calls from `.error()`, `.warn()`, `.debug()`, `.info()` to `.verbose()`
-  //
   log: {
-    level: 'info'
-  }
+    level: 'info',
 
+    transports: [
+      new(winston.transports.Console)({
+        colorize: true
+      }),
+      new(winston.transports.File)({
+        filename: debugFile,
+        timestamp: true,
+        json: false
+      })
+    ],
+
+    exceptionHandlers: [
+      new(winston.transports.Console)({
+        colorize: true
+      }),
+      new(winston.transports.File)({
+        filename: exceptionFile,
+        timestamp: true,
+        json: false
+      })
+    ],
+
+    exitOnError: false
+  }
 };

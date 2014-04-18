@@ -1,4 +1,5 @@
 {
   "env": "local",
-  "sailsEnv": "development"
+  "sailsEnv": "development",
+  "logToFile": false
 }

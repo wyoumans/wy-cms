@@ -74,8 +74,6 @@ module.exports.sockets = {
   // but host/port is left unset, Sails will try to connect to redis
   // running on localhost via port 6379
 
-
-
   // `authorization`
   //
   // Global authorization for Socket.IO access,
