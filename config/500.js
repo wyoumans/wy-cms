@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Default 500 (Server Error) middleware
  *

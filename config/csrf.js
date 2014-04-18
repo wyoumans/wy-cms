@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Cross-Site Request Forgery Protection
  *

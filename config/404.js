@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Default 404 (Not Found) handler
  *

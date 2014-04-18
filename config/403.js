@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Default 403 (Forbidden) middleware
  *

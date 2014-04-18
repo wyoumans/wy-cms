@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Default 400 (Bad Request) handler
  *
