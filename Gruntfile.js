@@ -111,25 +111,6 @@ module.exports = function(grunt) {
       }
     },
 
-    mkdir: {
-      fadmin: {
-        options: {
-          create: ['.tmp/public/fadmin']
-        }
-      }
-    },
-
-    rename: {
-      fadminPre: {
-        src: '.tmp/public',
-        dest: '.tmp/tmp'
-      },
-      fadminPost: {
-        src: '.tmp/tmp',
-        dest: '.tmp/public/fadmin'
-      }
-    },
-
     clean: {
       dev: ['.tmp/public/**'],
       build: ['www']
@@ -196,7 +177,7 @@ module.exports = function(grunt) {
         options: {
           startTag: '//- SCRIPTS',
           endTag: '//- SCRIPTS END',
-          fileTmpl: 'script(type="text/javascript", src="/fadmin%s")',
+          fileTmpl: 'script(type="text/javascript", src="/%s")',
           appRoot: '.tmp/public'
         },
         files: {
@@ -208,7 +189,7 @@ module.exports = function(grunt) {
         options: {
           startTag: '//- SCRIPTS',
           endTag: '//- SCRIPTS END',
-          fileTmpl: 'script(type="text/javascript", src="/fadmin%s")',
+          fileTmpl: 'script(type="text/javascript", src="/%s")',
           appRoot: '.tmp/public'
         },
         files: {
@@ -220,7 +201,7 @@ module.exports = function(grunt) {
         options: {
           startTag: '//- STYLES',
           endTag: '//- STYLES END',
-          fileTmpl: 'link(rel="stylesheet", href="/fadmin%s")',
+          fileTmpl: 'link(rel="stylesheet", href="/%s")',
           appRoot: '.tmp/public'
         },
         files: {
@@ -232,7 +213,7 @@ module.exports = function(grunt) {
         options: {
           startTag: '//- STYLES',
           endTag: '//- STYLES END',
-          fileTmpl: 'link(rel="stylesheet", href="/fadmin%s")',
+          fileTmpl: 'link(rel="stylesheet", href="/%s")',
           appRoot: '.tmp/public'
         },
         files: {
@@ -259,9 +240,6 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'compileAssets',
     'linkAssets',
-    'rename:fadminPre',
-    'mkdir:fadmin',
-    'rename:fadminPost',
     'watch'
   ]);
 

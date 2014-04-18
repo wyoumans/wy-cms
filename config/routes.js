@@ -36,11 +36,11 @@ module.exports.routes = {
   // (This would also work if you had a file at: `/views/home.ejs`)
   '/': {
     view: 'home/index'
-  }
+  },
 
   // Authentication routes
-  '/fadmin/login': 'AuthController.login',
-  '/fadmin/logout': 'AuthController.logout',
+  '/login': 'AuthController.login',
+  '/logout': 'AuthController.logout',
 
 };
 
